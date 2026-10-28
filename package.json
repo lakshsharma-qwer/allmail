@@ -1,0 +1,30 @@
+{
+  "name": "allmail",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Self-hosted bulk email platform that sends through a relay of your own Gmail/SMTP mailboxes with per-mailbox daily limits.",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,magenta \"node --watch server/index.js\" \"vite\"",
+    "build": "vite build",
+    "start": "NODE_ENV=production node server/index.js",
+    "test:relay": "node scripts/relay-test.js"
+  },
+  "dependencies": {
+    "bcryptjs": "2.4.3",
+    "dotenv": "16.4.7",
+    "express": "4.21.2",
+    "jsonwebtoken": "9.0.2",
+    "nodemailer": "6.9.16"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "4.3.4",
+    "concurrently": "9.1.0",
+    "papaparse": "5.4.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.28.0",
+    "smtp-server": "3.13.6",
+    "vite": "5.4.11"
+  }
+}
